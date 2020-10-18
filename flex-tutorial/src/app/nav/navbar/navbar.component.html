@@ -1,0 +1,35 @@
+<mat-toolbar style="background-color: cadetblue">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row">
+      <button mat-button>
+        <mat-icon>home</mat-icon>
+        <span class="logo"> Peace Tech</span>
+      </button>
+      <div *ngIf="!deviceXs">
+        <button mat-button>NgEvent</button>
+        <button mat-button [routerLink]="['/events']" routerLink="active">
+          AllEvents
+        </button>
+        <button mat-button [routerLink]="['/events/new']" routerLink="active">
+          Create Event
+        </button>
+        <button mat-button>Events</button>
+      </div>
+      <div fxLayoutAlign="space-between center">
+        <input type="search" placeholder="search" />
+      </div>
+    </div>
+
+    <div>
+      <button mat-icon-button>
+        <mat-icon *ngIf="deviceXs">more_vert</mat-icon>
+        <span *ngIf="!deviceXs">Menu</span>
+      </button>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
+    <button mat-button>Home</button>
+    <button mat-button>Contact Us</button>
+    <button mat-button>About Us</button>
+  </mat-toolbar-row>
+</mat-toolbar>

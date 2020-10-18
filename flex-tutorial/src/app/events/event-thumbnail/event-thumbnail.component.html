@@ -1,0 +1,30 @@
+<div
+  [routerLink]="['/events', event.id]"
+  fxLayoutAlign="space-between"
+  style="background-color: rgb(68, 122, 124)"
+>
+  <div
+    class="well hoverwell thumbnail"
+    fxLayoutGap="12px"
+    [style.margin-top]="'12px'"
+    [style.margin-left]="'10px'"
+  >
+    <h2>{{ event?.name }}</h2>
+    <div>Date: {{ event?.date }}</div>
+    <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">
+      Time: {{ event?.time }}
+      <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+      <span *ngSwitchCase="'9:00 am'">(Normal Start)</span>
+      <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+    </div>
+    <div>Price: {{ event?.price }}</div>
+
+    <div [hidden]="!event?.location">
+      <span>Location : {{ event?.location?.address }}</span>
+      <span class="pad-left"
+        >{{ event?.location?.city }},{{ event?.location?.country }}</span
+      >
+    </div>
+    <div [hidden]="!event?.onlineUrl">onlineUrl:{{ event?.onlineUrl }}</div>
+  </div>
+</div>
