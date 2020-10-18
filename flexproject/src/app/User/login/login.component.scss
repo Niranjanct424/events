@@ -1,0 +1,26 @@
+// .main-div mat-card
+// {
+    
+//     padding: 0px;
+//     // width: 25%;
+//     align-items: center;
+// }
+// .login-form
+// {
+//     padding: 20px;
+// }
+.main-div
+{
+    display: flex;
+    width: min-content;
+    margin-left: 200px;
+    margin-top: 200px;
+}
+.field
+{
+    align-items: center;
+}
+.login-form
+{
+    padding: 20px;
+}
